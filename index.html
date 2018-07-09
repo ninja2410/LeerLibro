@@ -1,0 +1,637 @@
+<html>
+<head>
+    <title>Cuentos</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <meta http-equiv=”Content-Type” content=”text/html; charset=ISO-8859-1″>
+        <link rel="shortcut icon" type="image/x-icon" href="libro.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+     <style>
+        #myProgress {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #ddd;
+        }
+
+        #myBar {
+        position: absolute;
+        width: 1%;
+        height: 100%;
+        background-color: #00CED1;
+        }
+
+        #label {
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        }
+
+        #salida {
+        color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F7DC6F;" >
+        <div class="container">
+            <a class="navbar-brand ml-3" href="#">
+                <img src="libro.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                Cuenta Cuentos
+            </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <div class="collapse navbar-collapse ml-4" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Otros Cuentos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" >Cuento 1</a>
+                            <a class="dropdown-item" >Cuento 2</a>
+                            <a class="dropdown-item" >Cuento 3</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="Cuento" style="background-color: #5F9EA0">
+            <div class="container text-center mt-1">
+                <h1 id="salida">Cuento No. 1</h1>
+            </div>
+
+            <div class="container mt-2">
+                <div class="row mb-2">
+                        <div class="col-12 col-lg-10 mt-2">
+                            <audio id="audiofile" src="ESP 12 - El pajaro Ajau.mp3"></audio>
+                                <div id="myProgress">
+
+                                    <span  id="myBar">
+                                        <div id="label">0%</div>
+                                    </span>
+
+                                    <div></div>
+
+                                </div>
+                        </div>
+                        <div class="col-12 col-lg-2 mt-2 text-center" id="botones">
+                            <button type="button" class="btn btn-success btn-lg" id="iniciar" onclick="iniciar()">&#8227;</button>
+                            <button type="button" class="btn btn-danger btn-lg" id="reiniciar" onclick="reiniciar()">&#8635;</button>
+                        </div>
+                </div>
+
+<h1 id="titulo"></h1>
+<div id="textp1" class="text-justify" style="font-size:20px"></div>
+<br>
+<div id="textp2" class="text-justify" style="font-size:20px"></div>
+<br>
+<div id="textp3" class="text-justify" style="font-size:20px"></div>
+<br>
+<div id="textp4" class="text-justify" style="font-size:20px"></div>
+<br>
+
+</p>
+
+    </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
+
+<script>
+
+
+var miAudio=document.getElementById("audiofile");
+
+var duracion=0;
+
+var interval;
+
+    miAudio.ondurationchange = function()
+    {
+
+    duracion=miAudio.duration;
+
+    }
+
+    function reiniciar()
+    {
+         if(miAudio.paused)
+
+    {
+        miAudio.play();
+    miAudio.currentTime=0;
+    interval=setInterval(mostrarDuracion,100);
+
+    }
+     miAudio.currentTime=0;
+
+    miAudio.play();
+
+
+
+        Titulo.forEach(function(element, index, array)
+        {
+
+                titulo.children[index].style.color = 'black';
+        });
+
+        p1.forEach(function(element, index, array)
+        {
+
+                textp1.children[index].style.color = 'black';
+        });
+
+        p2.forEach(function(element, index, array)
+        {
+
+                textp2.children[index].style.color = 'black';
+        });
+
+                p3.forEach(function(element, index, array)
+        {
+
+                textp3.children[index].style.color = 'black';
+        });
+
+        p4.forEach(function(element, index, array)
+        {
+
+                textp4.children[index].style.color = 'black';
+        });
+
+
+    }
+
+    function sync(texttime)
+    {
+        Titulo.forEach(function(element, index, array)
+        {
+
+                titulo.children[index].style.color = 'black';
+        });
+
+        p1.forEach(function(element, index, array)
+        {
+
+                textp1.children[index].style.color = 'black';
+        });
+
+                p2.forEach(function(element, index, array)
+        {
+
+                textp2.children[index].style.color = 'black';
+        });
+
+
+                p3.forEach(function(element, index, array)
+        {
+
+                textp3.children[index].style.color = 'black';
+        });
+
+        p4.forEach(function(element, index, array)
+        {
+
+                textp4.children[index].style.color = 'black';
+        });
+
+        miAudio.currentTime=texttime;
+        miAudio.play();
+
+
+                interval=setInterval(mostrarDuracion,100);
+
+                document.getElementById("iniciar").innerHTML="&#8545;";
+    }
+
+    function iniciar()
+
+    {
+           if(miAudio.paused)
+
+    {
+
+        // iniciamos
+
+        miAudio.play();
+
+        interval=setInterval(mostrarDuracion,100);
+
+        document.getElementById("iniciar").innerHTML="&#8545;";
+
+    }else{
+
+        // paramos
+
+        miAudio.pause();
+
+        clearInterval(interval);
+
+        document.getElementById("iniciar").innerHTML="&#8227;";
+
+    }
+
+
+    }
+
+    function mostrarDuracion()
+
+{
+
+    var elem = document.getElementById("myBar");
+     var elem2 = document.getElementById("myProgress");
+
+     var duracion2 = miAudio.currentTime*100/miAudio.duration;
+
+            elem.style.width = duracion2+"%";
+
+
+
+
+       document.getElementById("label").innerHTML = parseInt(duracion2)+"%";
+
+
+}
+
+var Titulo = [
+            {"start": "0.076","text": "El" },
+            {"start": "0.380","text": "pajaro" },
+            {"start": "0.939","text": "Ajaw" }
+            ];
+
+    var p1 = [
+            {"start": "3.033","text": "Segun" },
+            {"start": "3.543","text": "cuentan" },
+            {"start": "3.990","text": "nuestros"},
+            {"start": "4.311","text": "abuelos,"},
+            {"start": "4.996","text": "hace" },
+            {"start": "5.300","text": "mucho" },
+            {"start": "6.226","text": "tiempo" },
+            {"start": "6.910","text": "existio" },
+            {"start": "7.489","text": "un"},
+            {"start": "7.688","text": "pueblo"},
+            {"start": "7.999","text": "a" },
+            {"start": "8.012","text": "las" },
+            {"start": "8.288","text": "orillas" },
+            {"start": "8.779","text": "de un" },
+            {"start": "9.012","text": "lago." },
+            {"start": "9.617","text": "Alli" },
+            {"start": "10.183","text": "todos" },
+            {"start": "10.652","text": "vivian"},
+            {"start": "11.050","text": "atemorizados"},
+            {"start": "12.266","text": "por" },
+            {"start": "12.387","text": "un" },
+            {"start": "12.738","text": "pajaro" },
+            {"start": "13.382","text": "poderoso." },
+            {"start": "15.032","text": "El" },
+            {"start": "15.318","text": "pajaro"},
+            {"start": "15.798","text": "tenia"},
+            {"start": "16.171","text": "garras" },
+            {"start": "16.171","text": "muy" },
+            {"start": "17.089","text": "fuertes," },
+            {"start": "18.157","text": "las" },
+            {"start": "18.425","text": "que" },
+            {"start": "18.547","text": "utilizaba" },
+            {"start": "19.257","text": "para" },
+            {"start": "19.470","text": "llevarse" },
+            {"start": "20.086","text": "a los" },
+            {"start": "20.451","text": "niños." },
+            {"start": "21.765","text": "Los" },
+            {"start": "22.132","text": "pobladores" },
+            {"start": "23.272","text": "le" },
+            {"start": "23.274","text": "llamaban" },
+            {"start": "24.040","text": "ajaw," },
+            {"start": "24.898","text": "que" },
+            {"start": "25.150","text": "significa" },
+            {"start": "26.095","text": "poderoso." }
+    ];
+
+          var p2 = [
+            {"start": "27.605","text": "Todas" },
+            {"start": "27.935","text": "las" },
+            {"start": "28.251","text": "personas" },
+            {"start": "28.860","text": "escondían" },
+            {"start": "29.567","text": "a" },
+            {"start": "29.651","text": "sus" },
+            {"start": "29.851","text": "hijos" },
+            {"start": "30.163","text": "en" },
+            {"start": "30.300","text": "sus" },
+            {"start": "30.581","text": "casas." },
+            {"start": "31.919","text": "Ellos" },
+            {"start": "32.331","text": "sabían" },
+            {"start": "33.018","text": "que" },
+            {"start": "33.228","text": "cada" },
+            {"start": "33.545","text": "vez" },
+            {"start": "33.772","text": "que" },
+            {"start": "33.891","text": "el" },
+            {"start": "34.028","text": "pájaro" },
+            {"start": "34.516","text": "volaba" },
+            {"start": "35.178","text": "sobre" },
+            {"start": "35.339","text": "el" },
+            {"start": "35.591","text": "pueblo" },
+            {"start": "36.171","text": "se" },
+            {"start": "36.470","text": "llevaba" },
+            {"start": "37.130","text": "a" },
+            {"start": "37.200","text": "un" },
+            {"start": "37.354","text": "niño." },
+            {"start": "38.630","text": "Un" },
+            {"start": "38.975","text": "día," },
+            {"start": "39.623","text": "a" },
+            {"start": "39.863","text": "alguien" },
+            {"start": "40.289","text": "se" },
+            {"start": "40.390","text": "le" },
+            {"start": "40.499","text": "ocurrío" },
+            {"start": "41.120","text": "colocar" },
+            {"start": "41.825","text": "un" },
+            {"start": "42.165","text": "cuero" },
+            {"start": "42.492","text": "de" },
+            {"start": "42.627","text": "oveja" },
+            {"start": "43.190","text": "en" },
+            {"start": "43.480","text": "la" },
+            {"start": "43.579","text": "espalda" },
+            {"start": "44.015","text": "de" },
+            {"start": "44.099","text": "los" },
+            {"start": "44.279","text": "niños," },
+            {"start": "45.120","text": "para" },
+            {"start": "45.373","text": "confundir" },
+            {"start": "45.898","text": "al" },
+            {"start": "46.109","text": "pájaro." },
+            {"start": "47.347","text": "Al" },
+            {"start": "47.875","text": "hacer" },
+            {"start": "48.219","text": "esto," },
+            {"start": "48.956","text": "cuando" },
+            {"start": "49.248","text": "el" },
+            {"start": "49.412","text": "pájaro" },
+            {"start": "49.821","text": "quisiera" },
+            {"start": "50.220","text": "llevarse" },
+            {"start": "50.609","text": "a" },
+            {"start": "50.598","text": "un" },
+            {"start": "50.700","text": "niño," },
+            {"start": "51.431","text": "lo" },
+            {"start": "51.613","text": "que" },
+            {"start": "51.732","text": "se" },
+            {"start": "51.883","text": "llevaría" },
+            {"start": "52.561","text": "sería" },
+            {"start": "52.950","text": "el" },
+            {"start": "53.103","text": "cuero." },
+            {"start": "54.194","text": "Tuvieron" },
+            {"start": "54.730","text": "éxito" },
+            {"start": "55.282","text": "con" },
+            {"start": "55.491","text": "esta" },
+            {"start": "55.768","text": "idea," },
+            {"start": "56.280","text": "por" },
+            {"start": "56.551","text": "muchos" },
+            {"start": "57.130","text": "años." }
+        ];
+
+ var p3= [
+    {"start": "58.795","texto":"un"},
+    {"start": "59.081","texto":"dia"},
+    {"start": "59.670","texto":"el"},
+    {"start": "59.797","texto":"encargado"},
+    {"start": "60.456","texto":"del"},
+    {"start": "60.679","texto":"pueblo"},
+    {"start": "61.190","texto":"se"},
+    {"start": "61.399","texto":"dio"},
+    {"start": "61.627","texto":"cuenta"},
+    {"start": "61.979","texto":"que"},
+    {"start": "62.105","texto":"los"},
+    {"start": "62.300","texto":"niños"},
+    {"start": "62.639","texto":"seguian"},
+    {"start": "63.085","texto":"corriendo"},
+    {"start": "63.601","texto":"peligro"},
+
+    {"start": "64.764","texto":"Por"},
+    {"start": "64.926","texto":"eso"},
+    {"start": "65.627","texto":"decidió"},
+    {"start": "66.148","texto":"hacer"},
+    {"start": "66.426","texto":"un"},
+    {"start": "66.621","texto":"tubo"},
+    {"start": "66.906","texto":"largo"},
+    {"start": "67.881","texto":"de"},
+    {"start": "68.023","texto":"bambú"},
+    {"start": "69.019","texto":"para"},
+    {"start": "69.370","texto":"soplar"},
+    {"start": "69.785","texto":"el"},
+    {"start": "69.958","texto":"agua"},
+    {"start": "70.267","texto":"del"},
+    {"start": "70.498","texto":"lago"},
+    {"start": "71.092","texto":"y"},
+    {"start": "71.316","texto":"trasladarla"},
+    {"start": "72.175","texto":"a"},
+    {"start": "72.280","texto":"otro"},
+    {"start": "72.715","texto":"lugar"},
+
+    {"start": "73.867","texto":"Así"},
+    {"start": "74.269","texto":"lo"},
+    {"start": "74.452 ","texto":"hizo"},
+    {"start": "75.390","texto":"sopló"},
+    {"start": "77.364","texto":"sopló"},
+    {"start": "79.135","texto":"y"},
+    {"start": "79.532","texto":"sopló"},
+    {"start": "80.746","texto":"hasta"},
+    {"start": "81.303","texto":"trasladar"},
+    {"start": "81.915","texto":"el"},
+    {"start": "82.085","texto":"lago"},
+    {"start": "82.516","texto":"a"},
+    {"start": "82.745","texto":"otro"},
+    {"start": "83.054","texto":"lugar"},
+
+    {"start": "84.321","texto":"De"},
+    {"start": "84.491","texto":"esta"},
+    {"start": "84.786","texto":"manera"},
+    {"start": "85.635","texto":"se"},
+    {"start": "85.784","texto":"formó"},
+    {"start": "86.178","texto":"una"},
+    {"start": "86.338","texto":"laguna"},
+    {"start": "87.079","texto":"a"},
+    {"start": "87.170","texto":"la"},
+    {"start": "87.344","texto":"que"},
+    {"start": "87.459","texto":"llamaron"},
+    {"start": "87.996","texto":"Chikabal"},
+
+    {"start": "89.273","texto":"En"},
+    {"start": "89.545","texto":"sus"},
+    {"start": "89.766","texto":"orillas"},
+    {"start": "90.647","texto":"se"},
+    {"start": "90.827","texto":"formó"},
+    {"start": "91.211","texto":"San"},
+    {"start": "91.445","texto":"Martín"},
+    {"start": "91.900","texto":"Sacatepéquez"}
+];
+
+var p4= [
+        {"start": "93.516","texto":"El"},
+        {"start": "93.659","texto":"pájaro"},
+        {"start": "94.047","texto":"Ajaw"},
+        {"start": "94.808","texto":"vió"},
+        {"start": "95.090","texto":"que"},
+        {"start": "95.110","texto":"el"},
+        {"start": "95.189","texto":"lago"},
+        {"start": "95.508","texto":"ya"},
+        {"start": "95.580","texto":"no"},
+        {"start": "95.722","texto":"tenía"},
+        {"start": "96.231","texto":"agua"},
+        {"start": "97.101","texto":"y"},
+        {"start": "97.255","end":"97.276","texto":"que"},
+        {"start": "97.289","end":"97.534","texto":"la"},
+        {"start": "97.559","end":"97.262","texto":"población"},
+        {"start": "98.439","end":"98.540","texto":"se"},
+        {"start": "98.553","end":"98.671","texto":"había"},
+        {"start": "98.948","end":"99.695","texto":"trasladado"},
+        {"start": "99.820","end":"100.037","texto":"a"},
+        {"start": "100.071","end":"100.280","texto":"otro"},
+        {"start": "100.280","end":"100.783","texto":"lugar,"},
+        {"start": "101.351","end":"101.462","texto":"por"},
+        {"start": "101.467","end":"101.792","texto":"eso,"},
+        {"start": "101.921","end":"102.450","texto":"voló"},
+        {"start": "102.593","end":"102.713","texto":"hacia"},
+        {"start": "102.935","end":"103.037","texto":"la"},
+        {"start": "103.046","end":"103.697","texto":"montaña."},
+
+        {"start": "104.389","end":"104.598","texto":"Desde"},
+        {"start": "104.702","end":"105.191","texto":"entonces"},
+        {"start": "105.362","end":"105.707","texto":"nadie"},
+        {"start": "105.800","end":"105.998","texto":"lo"},
+        {"start": "106.070","texto":"ha"},
+        {"start": "106.300","texto":"visto."},
+
+        {"start": "106.970","texto":"Algunos"},
+        {"start": "107.415","texto":"cuentan"},
+        {"start": "108.154","texto":"que"},
+        {"start": "108.300","texto":"lo"},
+        {"start": "108.500 ","texto":"han"},
+        {"start": "108.712","texto":"escuchado"},
+        {"start": "109.443","texto":"en"},
+        {"start": "109.681","texto":"lo"},
+        {"start": "110.000","texto":"alto"},
+        {"start": "110.510","texto":"de"},
+        {"start": "110.534","texto":"la"},
+        {"start": "110.665","texto":"montaña."}
+    ];
+
+( function(win, doc) {
+
+
+    var audioPlayer = doc.getElementById("audiofile");
+    var subtitles = doc.getElementById("subtitles");
+
+
+    createtextp1();
+
+    function createtextp1()
+    {
+        var element;
+
+        for (var i = 0; i < Titulo.length; i++)
+        {
+
+            element = doc.createElement('span');
+            element.setAttribute("id", "c_" + i);
+            element.setAttribute("onClick", "sync("+Titulo[i].start+")");
+            element.innerText = Titulo[i].text + " ";
+            titulo.appendChild(element);
+
+        }
+
+        for (var i = 0; i < p1.length; i++)
+        {
+
+            element = doc.createElement('span');
+            element.setAttribute("id", "c_" + i);
+            element.setAttribute("onClick", "sync("+p1[i].start+")");
+            element.innerText = p1[i].text + " ";
+            textp1.appendChild(element);
+
+        }
+
+                for (var i = 0; i < p2.length; i++)
+        {
+
+            element = doc.createElement('span');
+            element.setAttribute("id", "c_" + i);
+            element.setAttribute("onClick", "sync("+p2[i].start+")");
+            element.innerText = p2[i].text + " ";
+            textp2.appendChild(element);
+
+        }
+
+                for (var i = 0; i < p3.length; i++)
+        {
+
+            element = doc.createElement('span');
+            element.setAttribute("id", "c_" + i);
+            element.setAttribute("onClick", "sync("+p3[i].start+")");
+            element.innerText = p3[i].texto + " ";
+            textp3.appendChild(element);
+
+        }
+
+        for (var i = 0; i < p4.length; i++)
+        {
+
+            element = doc.createElement('span');
+            element.setAttribute("id", "c_" + i);
+            element.setAttribute("onClick", "sync("+p4[i].start+")");
+            element.innerText = p4[i].texto + " ";
+            textp4.appendChild(element);
+
+        }
+
+    }
+
+
+    audioPlayer.addEventListener("timeupdate", function(e)
+    {
+                Titulo.forEach(function(element, index, array)
+        {
+            if( audioPlayer.currentTime >= element.start)
+
+                titulo.children[index].style.color = 'white';
+        });
+
+        p1.forEach(function(element, index, array)
+        {
+            if( audioPlayer.currentTime >= element.start)
+                textp1.children[index].style.color = 'white';
+        });
+
+        p2.forEach(function(element, index, array)
+        {
+            if( audioPlayer.currentTime >= element.start)
+                textp2.children[index].style.color = 'white';
+        });
+
+        p3.forEach(function(element, index, array)
+        {
+            if( audioPlayer.currentTime >= element.start)
+                textp3.children[index].style.color = 'white';
+        });
+
+        p4.forEach(function(element, index, array)
+        {
+            if( audioPlayer.currentTime >= element.start)
+                textp4.children[index].style.color = 'white';
+        });
+    });
+
+
+}(window, document));
+
+
+
+</script>
